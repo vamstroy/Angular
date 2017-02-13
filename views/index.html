@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<base href="/appangular/views/" />
+		<script type="text/javascript" src="../js/jquery.js" defer></script>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/custom/app.css">
+		<link rel="stylesheet" href="../css/selectize.default.css">
+		<script type="text/javascript" src="../js/bootstrap.min.js" defer></script>
+		<script type="text/javascript"  src="../js/angular.min.js"></script>
+		<script type="text/javascript"  src="../js/angular-route.min.js"></script>
+		<script type="text/javascript"  src="../js/select.min.js"></script>
+		<script type="text/javascript"  src="../js/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="../controllers/app.js"></script>
+		<script type="text/javascript"  src="../services/common.service.js"></script>	
+		<script type="text/javascript" src="../controllers/add_profile.js"></script>
+		<script type="text/javascript" src="../controllers/dashboard.js"></script>
+		<script type="text/javascript" src="../controllers/viewprofile.js"></script>
+	</head>
+	<body ng-app="check_out">
+		<div class="container-fluid">
+			<div class="page-header">
+				<div id="logo-img"></div>
+			</div>
+			<div class="lsidenav row col-md-2">
+				<ul class="nav nav-pills nav-stacked navbar">
+					<li role="presentation"><a href="dashboard"> Dashboard</a> </li>
+					<li role="presentation"><a href="viewprofile"> View Profile</a></li>
+					<li role="presentation"><a href="addprofile">Add Profile</a></li>
+					<li role="presentation"><a href="edit">Edit Profile</a></li>
+				</ul>	
+			</div>
+			<div class="middlebar col-md-10" ng-view>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+	<div class="col-md-offset-1 col-md-7">
+		<form name="profile" ng-submit="submitProfile()">
+			<div class="row col-md-7 col-md-offset-1">
+				<div class="picture form-group col-md-offset-3">
+					<input id="imgSelect" type="file" onchange="angular.element(this).scope().preview(event)" class="hidden" />
+					 <span class="glyphicon glyphicon-plus " ng-click="activate()" ng-show="addImageIcon"></span>
+					<img ng-src="{{image}}" class="img-responsive" ng-click="activate()">
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" class="form-control" ng-model="user.name" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input type="email" class="form-control" ng-model="user.email" placeholder="email">
+					</div>
+					<div class="form-group">
+						<label>Age</label>
+						<input type="number" class="form-control" ng-model="user.age" placeholder="age">
+
+					</div>
+					<div class="form-group" >
+						<label>Interests</label>
+						<div id="uiSelect">
+							<ui-select multiple tagging tagging-label=""
+										ng-model = "user.interests"
+									   theme="selectize" 
+									   reset-search-input="true">
+								<ui-select-match placeholder = "enter your interest">
+									{{$item}}
+								</ui-select-match>
+								<ui-select-choices repeat="interest in user.interests | filter : $select.search">
+									{{interest}}
+								</ui-select-choices>
+							</ui-select>
+						</div>
+					</div>
+					<div class="form-group btn-group btn-group-justified" role="group" arial-label="...">
+						<div class="btn-group" role="group">
+							<button type="submit" class="btn btn-primary btn-block" style="margin-top: 15px;">Add here</button>	
+						</div>
+					</div>
+				</div>	
+			</div>
+		</form>
+
+	</div>
+	<div class="col-md-4 border-left ">
+		<h3>Added People</h3>
+		<div class="searchOption row col-md-12">
+			<input type="text" class="form-control" ng-model="searchbox" placeholder="Search People "/>
+		</div>
+		<div class="col-md-12 imgStack">
+			<ul>
+				<li ng-repeat="people in users | filter : searchbox">
+					<img src="{{people.picUrl}}" class="img-thumbnail" width="60" height="60">
+					{{people.name}}<hr>
+				</li>
+			</ul>
+		</div>
+	</div>

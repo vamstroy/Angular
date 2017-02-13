@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<div class="row col-md-8 ">
+		<div class="col-md-3 profile-text" ng-repeat="user in userDetails">
+			<img src="{{user.picUrl}}" ng-click="viewUserDetails(user.email)" class="profile">
+			<div class="textDisplay">{{user.name | uppercase}}
+				<p>my name bla i eat bla</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 border-left ">
+		<h3>People</h3>
+		<div class="col-md-9">
+			<input type="text" class="form-control" ng-model="searchbox" placeholder="Search By Interests "/>
+		</div>
+		<div class="col-md-3">
+			<button type="button" class="btn btn-default" ng-click="getResult()">Search</button>
+		</div>
+		<div class="col-md-12 imgStack">
+			<ul>
+				<li ng-repeat="avail in availInterests track by $index">
+					<img src="{{avail.picUrl}}" class="img-thumbnail" width="60" height="60">
+					{{avail.name}}<hr>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>	

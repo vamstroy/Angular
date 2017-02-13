@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-offset-3 col-md-4 ">
+		<img src="{{user.picUrl}}" width="170" height="170">
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-offset-3 col-md-4 ">
+		{{user.name}}
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-offset-3 col-md-4 ">
+		{{user.email}}
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-offset-3 col-md-4 ">
+		{{user.age}}
+	</div>	
+</div>
+<div class="row col-md-offset-3 col-md-4">
+	<span ng-repeat="interest in user.interests">
+		{{interest}}
+	</span>
+</div>
